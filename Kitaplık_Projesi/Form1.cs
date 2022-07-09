@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Kitaplık_Projesi
 {
@@ -21,6 +22,15 @@ namespace Kitaplık_Projesi
 
         private void Form1_Load(object sender, EventArgs e)
         {
+          void listele()
+                {
+                DataTable dt = new DataTable();
+                SqlDataAdapter da=new SqlDataAdapter("Select * From Tbl_Kitaplar",bgl.baglanti());
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+           
+            
 
         }
     }
