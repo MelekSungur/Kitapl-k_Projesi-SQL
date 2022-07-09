@@ -1,0 +1,2 @@
+kitaplık projesi SQL baglantısı
+Data Source=DESKTOP-D0LP1EG;Initial Catalog=Kitaplık;Integrated Security=True
