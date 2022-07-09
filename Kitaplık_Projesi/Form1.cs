@@ -59,5 +59,24 @@ namespace Kitaplık_Projesi
         {
             durum = "0";
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int secilen = dataGridView1.SelectedCells[0].RowIndex;
+            TxtKitapid.Text = dataGridView1.Rows[secilen].Cells[0].Value.ToString();
+            TxtKitapAd.Text = dataGridView1.Rows[secilen].Cells[1].Value.ToString();
+           
+            TxtYazar.Text = dataGridView1.Rows[secilen].Cells[2].Value.ToString();
+            CmbTur.Text= dataGridView1.Rows[secilen].Cells[3].Value.ToString();
+            TxtSayfa.Text = dataGridView1.Rows[secilen].Cells[4].Value.ToString();
+            if (dataGridView1.Rows[secilen].Cells[5].Value.ToString() == "True")
+            {
+                Radiobtnsifir.Checked = true;
+            }
+            else
+            {
+                Radiobttnikinciel.Checked = true;
+            }
+        }
     }
 }

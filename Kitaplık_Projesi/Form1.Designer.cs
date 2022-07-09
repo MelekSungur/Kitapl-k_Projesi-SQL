@@ -59,6 +59,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(741, 269);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // LblKitapid
             // 
@@ -71,6 +72,7 @@
             // 
             // TxtKitapid
             // 
+            this.TxtKitapid.Enabled = false;
             this.TxtKitapid.Location = new System.Drawing.Point(105, 25);
             this.TxtKitapid.Name = "TxtKitapid";
             this.TxtKitapid.Size = new System.Drawing.Size(121, 26);
@@ -119,6 +121,7 @@
             // 
             // CmbTur
             // 
+            this.CmbTur.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbTur.FormattingEnabled = true;
             this.CmbTur.Items.AddRange(new object[] {
             "Roman",
