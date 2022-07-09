@@ -47,8 +47,17 @@
             this.BtnKaydet = new System.Windows.Forms.Button();
             this.BtnSil = new System.Windows.Forms.Button();
             this.BtnGuncelle = new System.Windows.Forms.Button();
+            this.TxtKitapbul = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnBul = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BtnHarfAra = new System.Windows.Forms.Button();
+            this.TxtKitapHarfAra = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -185,7 +194,7 @@
             // 
             // BtnListele
             // 
-            this.BtnListele.Location = new System.Drawing.Point(353, 25);
+            this.BtnListele.Location = new System.Drawing.Point(280, 25);
             this.BtnListele.Name = "BtnListele";
             this.BtnListele.Size = new System.Drawing.Size(230, 42);
             this.BtnListele.TabIndex = 14;
@@ -194,7 +203,7 @@
             // 
             // BtnKaydet
             // 
-            this.BtnKaydet.Location = new System.Drawing.Point(353, 88);
+            this.BtnKaydet.Location = new System.Drawing.Point(280, 88);
             this.BtnKaydet.Name = "BtnKaydet";
             this.BtnKaydet.Size = new System.Drawing.Size(230, 42);
             this.BtnKaydet.TabIndex = 15;
@@ -204,30 +213,99 @@
             // 
             // BtnSil
             // 
-            this.BtnSil.Location = new System.Drawing.Point(353, 147);
+            this.BtnSil.Location = new System.Drawing.Point(280, 147);
             this.BtnSil.Name = "BtnSil";
             this.BtnSil.Size = new System.Drawing.Size(230, 42);
             this.BtnSil.TabIndex = 16;
             this.BtnSil.Text = "Sil";
             this.BtnSil.UseVisualStyleBackColor = true;
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // BtnGuncelle
             // 
-            this.BtnGuncelle.Location = new System.Drawing.Point(353, 211);
+            this.BtnGuncelle.Location = new System.Drawing.Point(280, 211);
             this.BtnGuncelle.Name = "BtnGuncelle";
             this.BtnGuncelle.Size = new System.Drawing.Size(230, 42);
             this.BtnGuncelle.TabIndex = 17;
             this.BtnGuncelle.Text = "Güncelle";
             this.BtnGuncelle.UseVisualStyleBackColor = true;
+            this.BtnGuncelle.Click += new System.EventHandler(this.BtnGuncelle_Click);
+            // 
+            // TxtKitapbul
+            // 
+            this.TxtKitapbul.Location = new System.Drawing.Point(34, 46);
+            this.TxtKitapbul.Name = "TxtKitapbul";
+            this.TxtKitapbul.Size = new System.Drawing.Size(142, 26);
+            this.TxtKitapbul.TabIndex = 19;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(634, 198);
+            this.label6.Location = new System.Drawing.Point(68, 19);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 18);
+            this.label6.Size = new System.Drawing.Size(70, 18);
             this.label6.TabIndex = 18;
-            this.label6.Text = "label6";
+            this.label6.Text = "Kitap Ad";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.BtnBul);
+            this.groupBox1.Controls.Add(this.TxtKitapbul);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(531, 10);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 120);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ada Göre Kitap Ara";
+            // 
+            // BtnBul
+            // 
+            this.BtnBul.Location = new System.Drawing.Point(71, 78);
+            this.BtnBul.Name = "BtnBul";
+            this.BtnBul.Size = new System.Drawing.Size(75, 23);
+            this.BtnBul.TabIndex = 20;
+            this.BtnBul.Text = "ARA";
+            this.BtnBul.UseVisualStyleBackColor = true;
+            this.BtnBul.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.BtnHarfAra);
+            this.groupBox2.Controls.Add(this.TxtKitapHarfAra);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(531, 153);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 113);
+            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Harfe Göre Arama";
+            // 
+            // BtnHarfAra
+            // 
+            this.BtnHarfAra.Location = new System.Drawing.Point(71, 90);
+            this.BtnHarfAra.Name = "BtnHarfAra";
+            this.BtnHarfAra.Size = new System.Drawing.Size(75, 23);
+            this.BtnHarfAra.TabIndex = 23;
+            this.BtnHarfAra.Text = "ARA";
+            this.BtnHarfAra.UseVisualStyleBackColor = true;
+            this.BtnHarfAra.Click += new System.EventHandler(this.BtnHarfAra_Click);
+            // 
+            // TxtKitapHarfAra
+            // 
+            this.TxtKitapHarfAra.Location = new System.Drawing.Point(34, 58);
+            this.TxtKitapHarfAra.Name = "TxtKitapHarfAra";
+            this.TxtKitapHarfAra.Size = new System.Drawing.Size(142, 26);
+            this.TxtKitapHarfAra.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(68, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 18);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Kitap Ad";
             // 
             // Form1
             // 
@@ -236,7 +314,8 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 555);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnGuncelle);
             this.Controls.Add(this.BtnSil);
             this.Controls.Add(this.BtnKaydet);
@@ -261,9 +340,14 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Kitaplık";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +373,14 @@
         private System.Windows.Forms.Button BtnKaydet;
         private System.Windows.Forms.Button BtnSil;
         private System.Windows.Forms.Button BtnGuncelle;
+        private System.Windows.Forms.TextBox TxtKitapbul;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button BtnBul;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button BtnHarfAra;
+        private System.Windows.Forms.TextBox TxtKitapHarfAra;
+        private System.Windows.Forms.Label label7;
     }
 }
 

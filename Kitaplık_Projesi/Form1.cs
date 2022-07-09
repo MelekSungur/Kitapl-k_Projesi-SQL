@@ -78,5 +78,62 @@ namespace Kitaplık_Projesi
                 Radiobttnikinciel.Checked = true;
             }
         }
+
+        private void BtnSil_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand sil =new SqlCommand("Delete From Tbl_Kitaplar where Kitapid=@k1", baglanti);
+            sil.Parameters.AddWithValue("@k1", TxtKitapid.Text);
+            sil.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Kitap Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            listele();
+
+        }
+
+        private void BtnGuncelle_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand Guncelle = new SqlCommand("Update Tbl_Kitaplar set Kitapad=@p1,Yazar=@p2,Tur=@p3,Sayfa=@p4,Durum=@p5 where Kitapid=@p6", baglanti);
+            Guncelle.Parameters.AddWithValue("p1", TxtKitapAd.Text);
+            Guncelle.Parameters.AddWithValue("@p2", TxtSayfa.Text);
+            Guncelle.Parameters.AddWithValue("@p3", CmbTur.Text);
+            Guncelle.Parameters.AddWithValue("@p4", TxtSayfa.Text);
+            if (Radiobtnsifir.Checked==true)
+            {
+                Guncelle.Parameters.AddWithValue("@p5", durum);
+            }
+            Guncelle.Parameters.AddWithValue("@p6", TxtKitapid.Text);
+            Guncelle.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Kayıt Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            listele();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlCommand bul = new SqlCommand("Select * From Tbl_Kitaplar where KitapAd=@p1", baglanti);
+            bul.Parameters.AddWithValue("@p1", TxtKitapbul.Text);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(bul);
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+
+        }
+
+        private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            listele();
+        }
+
+        private void BtnHarfAra_Click(object sender, EventArgs e)
+        {
+            SqlCommand bul = new SqlCommand("Select * From Tbl_Kitaplar where KitapAd like '%"+TxtKitapHarfAra.Text+"%'", baglanti);
+            bul.Parameters.AddWithValue("@p1", TxtKitapbul.Text);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(bul);
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
     }
 }
