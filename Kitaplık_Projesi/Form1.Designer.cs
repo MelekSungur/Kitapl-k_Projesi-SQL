@@ -47,15 +47,17 @@
             this.BtnKaydet = new System.Windows.Forms.Button();
             this.BtnSil = new System.Windows.Forms.Button();
             this.BtnGuncelle = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(4, 284);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(727, 269);
+            this.dataGridView1.Size = new System.Drawing.Size(741, 269);
             this.dataGridView1.TabIndex = 0;
             // 
             // LblKitapid
@@ -118,6 +120,12 @@
             // CmbTur
             // 
             this.CmbTur.FormattingEnabled = true;
+            this.CmbTur.Items.AddRange(new object[] {
+            "Roman",
+            "Şiir",
+            "Hikaye",
+            "Deneme",
+            "Tiyatro"});
             this.CmbTur.Location = new System.Drawing.Point(105, 186);
             this.CmbTur.Name = "CmbTur";
             this.CmbTur.Size = new System.Drawing.Size(121, 26);
@@ -126,24 +134,26 @@
             // Radiobttnikinciel
             // 
             this.Radiobttnikinciel.AutoSize = true;
-            this.Radiobttnikinciel.Location = new System.Drawing.Point(157, 259);
+            this.Radiobttnikinciel.Location = new System.Drawing.Point(172, 256);
             this.Radiobttnikinciel.Name = "Radiobttnikinciel";
             this.Radiobttnikinciel.Size = new System.Drawing.Size(84, 22);
             this.Radiobttnikinciel.TabIndex = 9;
             this.Radiobttnikinciel.TabStop = true;
             this.Radiobttnikinciel.Text = "İkinci El";
             this.Radiobttnikinciel.UseVisualStyleBackColor = true;
+            this.Radiobttnikinciel.CheckedChanged += new System.EventHandler(this.Radiobttnikinciel_CheckedChanged);
             // 
             // Radiobtnsifir
             // 
             this.Radiobtnsifir.AutoSize = true;
             this.Radiobtnsifir.Location = new System.Drawing.Point(85, 259);
             this.Radiobtnsifir.Name = "Radiobtnsifir";
-            this.Radiobtnsifir.Size = new System.Drawing.Size(55, 22);
+            this.Radiobtnsifir.Size = new System.Drawing.Size(81, 22);
             this.Radiobtnsifir.TabIndex = 10;
             this.Radiobtnsifir.TabStop = true;
-            this.Radiobtnsifir.Text = "Sıfır";
+            this.Radiobtnsifir.Text = "Pakette";
             this.Radiobtnsifir.UseVisualStyleBackColor = true;
+            this.Radiobtnsifir.CheckedChanged += new System.EventHandler(this.Radiobtnsifir_CheckedChanged);
             // 
             // label5
             // 
@@ -187,6 +197,7 @@
             this.BtnKaydet.TabIndex = 15;
             this.BtnKaydet.Text = "Kaydet";
             this.BtnKaydet.UseVisualStyleBackColor = true;
+            this.BtnKaydet.Click += new System.EventHandler(this.BtnKaydet_Click);
             // 
             // BtnSil
             // 
@@ -206,6 +217,15 @@
             this.BtnGuncelle.Text = "Güncelle";
             this.BtnGuncelle.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(634, 198);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 18);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "label6";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -213,6 +233,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(743, 555);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.BtnGuncelle);
             this.Controls.Add(this.BtnSil);
             this.Controls.Add(this.BtnKaydet);
@@ -265,6 +286,7 @@
         private System.Windows.Forms.Button BtnKaydet;
         private System.Windows.Forms.Button BtnSil;
         private System.Windows.Forms.Button BtnGuncelle;
+        private System.Windows.Forms.Label label6;
     }
 }
 
