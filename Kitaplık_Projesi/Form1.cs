@@ -16,6 +16,8 @@ namespace Kitaplık_Projesi
         {
             InitializeComponent();
         }
+        Sqlbaglantisi bgl = new Sqlbaglantisi();
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
