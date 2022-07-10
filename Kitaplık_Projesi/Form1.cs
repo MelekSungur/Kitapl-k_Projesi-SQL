@@ -134,6 +134,7 @@ namespace Kitaplık_Projesi
             SqlDataAdapter da = new SqlDataAdapter(bul);
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
         }
     }
 }
